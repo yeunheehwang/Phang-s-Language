@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phang's Language | 다국어 마스터</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&family=Outfit:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Excel Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Phang's Language</div>
+            <div class="user-stats">
+                <div class="stat-item" title="연속 학습 일수">
+                    <i class="fa-solid fa-fire" style="color: #ff4d4d;"></i>
+                    <span class="stat-value" id="streak">0</span>
+                </div>
+                <div class="stat-item" title="경험치">
+                    <i class="fa-solid fa-star" style="color: #ffcc00;"></i>
+                    <span class="stat-value" id="xp">0</span>
+                </div>
+                <div class="stat-item" title="레벨">
+                    <i class="fa-solid fa-trophy" style="color: #00d4ff;"></i>
+                    <span class="stat-value" id="level">1</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="date-header">
+                <div id="date-text"></div>
+                <button class="btn btn-outline" onclick="exportToExcel()">
+                    <i class="fa-solid fa-file-excel"></i> 엑셀 저장
+                </button>
+            </div>
+
+            <div class="dashboard" id="quest-board">
+                <!-- Cards will be injected here by app.js -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Study & Quiz -->
+    <div class="modal" id="study-modal">
+        <div class="study-container">
+            <div id="study-content"></div>
+            <div class="controls" id="modal-controls"></div>
+        </div>
+    </div>
+
+    <script src="app_v2.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
