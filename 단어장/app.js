@@ -532,6 +532,7 @@ const wordDB = {
                 { word: "Adiós", mean: "안녕 (헤어질 때)", example: "Adiós, mis amigos.", conjugation: { pres: "N/A", past: "N/A" } },
                 { word: "Volver", mean: "돌아가다", example: "Quiero volver pronto.", conjugation: { pres: "Vuelvo", past: "Volví" } }
             ]
+        }
     ]
 };
 
